@@ -107,3 +107,19 @@ addBtn.addEventListener("click", e => {
         closeIcon.click();
     }
 });
+
+
+//-------------- For prevent hacking -----------------
+
+// Disable context menu
+document.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+   }, false);
+  
+   // Disable “Ctrl+Shift+I”, “Ctrl+U” and ”F12 key
+   document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey || e.keyCode==123) {
+     e.stopPropagation();
+     e.preventDefault();
+    }
+   });
